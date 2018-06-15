@@ -1,0 +1,5 @@
+spring:
+  cache:
+    caffeine:
+      spec: maximumSize=1,expireAfterAccess=600s
+    cache-names: playlist
