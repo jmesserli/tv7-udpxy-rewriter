@@ -20,7 +20,7 @@ http://your-udpxy.host:your-udpxy-port/udp/239.77.0.77:5000
 
 Point your player (e.g. VLC) to:
 ```
-https://tv7-udpxy.pnx.li?udpxyHost=<host>&udpxyPort=<port>&https=false
+https://tv7-udpxy.pegnu.cloud?udpxyHost=<host>&udpxyPort=<port>&https=false
 ```
 
 Replace:
