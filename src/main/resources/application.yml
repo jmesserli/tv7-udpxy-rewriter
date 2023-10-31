@@ -3,3 +3,13 @@ spring:
     caffeine:
       spec: maximumSize=1,expireAfterAccess=600s
     cache-names: playlist
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+tv7:
+  playlist-url: https://api.init7.net/tvchannels.m3u
