@@ -19,6 +19,6 @@ constructor(
 
         return PLAYLIST_ENTRY.replace(playlist) {
             "http${if (https) "s" else ""}://$udpxyHost:$udpxyPort/udp/${it.groups[1]!!.value}"
-        };
+        }
     }
 }
