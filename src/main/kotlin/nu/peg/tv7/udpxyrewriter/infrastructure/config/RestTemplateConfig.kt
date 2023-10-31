@@ -1,22 +1,24 @@
-package nu.peg.tv7.udpxyrewriter.config
+package nu.peg.tv7.udpxyrewriter.infrastructure.config
 
 import org.springframework.boot.web.client.RestTemplateBuilder
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.converter.StringHttpMessageConverter
 import org.springframework.web.client.RestTemplate
-import java.nio.charset.Charset
+import java.nio.charset.StandardCharsets
+import java.time.Duration
+import java.time.temporal.ChronoUnit
 
 @Configuration
-class AppConfig {
+class RestTemplateConfig {
     @Bean
     fun restTemplate(): RestTemplate {
-        val converter = StringHttpMessageConverter(Charset.forName("UTF-8"))
+        val converter = StringHttpMessageConverter(StandardCharsets.UTF_8)
 
         return RestTemplateBuilder()
                 .additionalMessageConverters(converter)
-                .setConnectTimeout(5000)
-                .setReadTimeout(5000)
+                .setConnectTimeout(Duration.of(5, ChronoUnit.SECONDS))
+                .setReadTimeout(Duration.of(5, ChronoUnit.SECONDS))
                 .build()
     }
 }
